@@ -579,20 +579,19 @@ transform: scale(1);
 .first-text{
     padding-left: 20px;
     padding-top: 20px;
-    font-size:25px;
+    font-size:35px;
     color:#434875;
     font-weight: 600;
     margin: 0;
 }
 
 .imagenmensaje{
-    height: 250px;
-    width: 250px;
+    height: 200px;
+    width: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
     margin: auto; /* Agrega margen automático para centrar horizontalmente */
-    color: #434875;
     margin:0 auto;
 }
 
@@ -611,24 +610,121 @@ transform: scale(1);
 }
 
  ul li{
+    text-decoration: none;
     padding-left: 15px;
     font-size: 24px;
     margin-top: 10px;
 }
 
- i{
-  background: #434875;
+ i1{
+    text-decoration: none;
+ background: #434875;
   padding: 5px;  
   border-radius: 5px;
   transition: .3s;
   color: #fff;
+  font-size: 20px;
+  margin-right: 10px;
 }
 
-.correo-media i:hover{
+
+.correo-media i1:hover{
+    text-decoration: none;
     background-color: #fff;
     color: #434875;
 }
 
+.correo-media li a {
+    text-decoration: none; /* Elimina el subrayado del enlace */
+    color: #434875; /* Establece el color del texto */
+}
+
+
+.correo-media .correo-text {
+    font-size: 22px; /* Ajusta el tamaño del texto según sea necesario */
+    color: #434875; /* Cambia el color del texto */
+    font-weight: 250; /* Establece la negrita según sea necesario */
+    text-decoration: none !important; /* Elimina el subrayado que parece un enlace */
+}
+
+.third-text{
+    font-size: 25px;
+    position: relative;
+    top: 20px;
+    left: 20px;
+    padding-top: 20px;
+    color: #fff;
+    
+}
+
+form{
+    padding: 0 50px;
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+}
+
+.input-box1{
+    height: 40px;
+    width: 70%;
+    margin: 30px 0;
+    position: relative;
+}
+
+.input{
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: 2px solid #fff;
+    border-radius: 20px;
+    outline: none;
+    padding-left: 10px;
+    color: #fff;
+    font-size: 16px;
+}
+
+.input-box1 label{
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    padding-left: 10px;
+    transform: translateY(-50%);
+    font-size: 15px;
+    font-weight: 500;
+    color: #fff;
+    transition: .3s;
+}
+
+.input-box1 .input:focus ~ label,
+.input-box1 .input:valid ~ label{
+    top: -1px;
+    left: 10px;
+    background:#a8aac5;
+    font-weight: 500;
+    font-size: 12px;
+    padding: 5px;
+}
+
+textarea.input{
+    resize: none;
+    min-height: 150px;
+    overflow: auto;
+}
+
+.btnEnviar{
+    position: relative;
+    top:100px;
+    background: #fff;
+    outline: none;
+    border: none;
+    border-radius: 4px;
+    height: 45px;
+    width: 30%;
+    font-size: 16px;
+    color: #a8aac5;
+    cursor: pointer;
+    font-weight: 500;
+}
 
 /*Sección para modificar en pantalla más pequeña*/
 @media (max-width: 1380px){
@@ -797,5 +893,7 @@ transform: scale(1);
         margin-top: -10px !important;
     }
 
+
+    
 
 }
