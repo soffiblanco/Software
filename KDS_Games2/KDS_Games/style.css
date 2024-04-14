@@ -1,10 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
 
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
     font-family: "Pixelify Sans", sans-serif;
+}
+
+/*segunda fuente para el titulo*/
+h2 {
+    font-family:'Finger Paint', cursive;
 }
 
 body{
@@ -112,7 +119,8 @@ transform: scale(1);
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background: url('/Imagenes/fondoprovisional.png') no-repeat;
+    z-index: -1; /*fondo en el fondo*/
+    background: url('/Imagenes/fondonormalantigua.png') no-repeat;
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
@@ -120,10 +128,10 @@ transform: scale(1);
 
 #text{
     position: absolute;
-    font-size: 6em;
-    color: #e0d8d8;
-    text-shadow: 2px 4px 5px #3d4858;
-    z-index: -99999;
+    font-size: 9em;
+    color: #ff0095;
+    text-shadow: 2px 4px 5px #000000;
+    z-index: 999;
 }
 
 .parallax img{
@@ -145,8 +153,22 @@ transform: scale(1);
     z-index: -10;
 }
 
+#fondoCasasIzquierda,
+#fondoCasasDerecha6 {
+    position: absolute;
+    top: 0; /* Ajusta la posición inicial vertical */
+    transition: transform 0.5s ease; /* Agrega una transición suave */
+}
+
+/* Cuando se desplaza hacia abajo, las casas se moverán hacia abajo */
+.scroll-down #fondoCasasIzquierda,
+.scroll-down #fondoCasasDerecha6 {
+    transform: translateY(100px); /* Ajusta la cantidad de movimiento hacia abajo */
+}
+
+
 .sec{
-    position: relative;
+    position: relative; /*fondo texto home */
     background: #c4f6ff;
     padding: 30px 10px;
     z-index: -1;

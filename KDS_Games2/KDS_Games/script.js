@@ -1,14 +1,14 @@
 
 let text=document.getElementById('text')
-let arbolderecha = document.getElementById('arbol-derecha');
-let arbolizquierda = document.getElementById('arbol-izquierda');
+let fondoCasasIzquierda = document.getElementById('fondoCasasIzquierda');
+let fondoCasasDerecha6 = document.getElementById('fondoCasasDerecha6');
 
 window.addEventListener('scroll',()=>{
     let value=window.scrollY;
     
     text.style.marginTop = value * 2.5 +'px';
-    arbolderecha.style.left = value * -1.2 + 'px';
-    arbolizquierda.style.left = value * 1.2 + 'px';
+    fondoCasasIzquierda.style.left = value * -1.2 + 'px';
+    fondoCasasDerecha6.style.left = value * 1.2 + 'px';
     });
     
     const wrapper=document.querySelector('.wrapper');
