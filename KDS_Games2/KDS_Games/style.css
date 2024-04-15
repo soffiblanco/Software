@@ -168,22 +168,73 @@ transform: scale(1);
 
 
 .sec{
-    position: relative; /*fondo texto home */
-    background: #c4f6ff;
-    padding: 30px 10px;
-    z-index: -1;
+    position: relative; /*fondos home)*/
+    background-image: url(Imagenes/fondoPetenSolola.png), url(Imagenes/fondoPetenSololaIzabal.png), url(Imagenes/fondoAgua.png);
+    background-size: contain, contain, contain;
+    background-repeat: no-repeat;
+    background-position: center -55px, center 1630px, center 3000px;
+    min-height: 6000px;
+}
+
+.sec-titulo{ /*La historia comienza asi titulo*/
+    font-size: 25px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    color:#ffffff; 
+    text-shadow: 2px 4px 5px #000000;
+    font-weight: 300;
+    position: absolute;
+    z-index: 1;
+    transform: translateX(15%) translateY(45%);
+}
+
+.sec-texto1{
+    background-color: rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    position: relative;
+    padding: 60px 60px;
+    margin-bottom: 80px;
+    transform: translateX(160%) translateY(280%);
+    z-index: 1;
+}
+
+.sec-texto2{
+    background-color: rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    position: relative;
+    padding: 60px 60px;
+    margin-bottom: 80px;
+    transform: translateX(30%) translateY(350%);
+    z-index: 1;
+}
+
+.sec-texto3{
+    background-color: rgba(0, 0, 0, 0.5);
+    max-width: 600px;
+    position: relative;
+    padding: 60px 60px;
+    margin-bottom: 80px;
+    transform: translateX(150%) translateY(380%);
+    z-index: 3;
 }
 
 .sec h2{
     font-size: 3em;
-    color:#302222;
+    color:#ffffff; /*fuente titulo home (cuadro de texto)*/
 }
 
 .sec p{
     font-size: 1em;
-    color:#000000;
+    color:#ffffff; /*fuente texto home*/
     font-weight: 300;
     text-align: justify;
+}
+
+#fondoPeten1 { /*fondo peten ajuste de imagen*/
+    width: 200%;
+    padding: 50;
+    max-width: 50;
+    display: block;
+    margin:  auto;
 }
 
 
@@ -915,7 +966,8 @@ textarea.input{
         margin-top: -10px !important;
     }
 
-
+   
+    
     
 
 }
