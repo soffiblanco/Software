@@ -566,24 +566,75 @@ transform: scale(1);
     justify-content: center; /* Centra horizontalmente los elementos */
     background: #fff; /* Cambia el color de fondo según tu preferencia */
     padding: 150px 50px; /* Ajusta el espaciado interno según sea necesario */
-    text-align: left; /* Alinea el texto a la izquierda */
+    text-align: justify; /* Alinea el texto a la izquierda */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola fila */
-
+    margin: 7.5%;
+    margin-top: auto;
 }
+
 .news h2 {
-    font-size: 4em;
-    color: #000000;
+    font-size: 5em;
+    color: #09168b;
     margin-left: auto;
     margin-right: auto;
 }
+
+
+.news h3, h4 {
+    font-size: 2.5em;
+    color: #098b6a;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: -50px;
+}
+
+
+.news h5 {
+    font-size: 2em;
+    color: #8b098b;
+    margin-left: auto;
+    margin-right: auto;
+}
+.news p {
+    font-size: 1.5em;
+    color: #000000;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 10px;
+}
+
+.juegolago {
+    float: left; /* Alinea la imagen a la derecha del texto */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    shape-outside: rectangle(0,0,100%,100%); /* Define una forma rectangular alrededor de la imagen */
+    width: 15% !important;
+    margin-top: 10px !important;
+}
+
+.juegouno, .juegodos {
+    max-width: 2000px;
+    margin-top: 100px;
+}
+
+
+.juegoizabal {
+    float: left; /* Alinea la imagen a la derecha del texto */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    shape-outside: rectangle(0,0,100%,100%); /* Define una forma rectangular alrededor de la imagen */
+    width: 15% !important;
+    margin-top: 10px !important;
+}
+
+
 .news img {
     flex: 0 0 50%; /* Permite que los elementos ocupen el 100% del ancho */
-    margin-bottom: 10px; /* Espaciado inferior entre los elementos */
-    font-size: 1em; /* Tamaño del texto */
+    margin-bottom: 0; /* Espaciado inferior entre los elementos */
     color: #000000; /* Color del texto */
-    width: 0px; /* Ancho de las imágenes */
-    margin-top: 0; /* Espaciado superior entre las imágenes y el texto */
+    width: 200px; /* Ancho de las imágenes */
+    height: 200px;
+    margin-top: 5px; /* Espaciado superior entre las imágenes y el texto */
 }
+
 
 /*Pestaña de Games*/
 .games{
@@ -977,6 +1028,7 @@ textarea.input{
     .vision{
         margin-top: -10px !important;
     }
+
 
    
     
