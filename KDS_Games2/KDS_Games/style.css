@@ -126,11 +126,11 @@ transform: scale(1);
     background-attachment: fixed;
 }
 
-#text{
+#text{  /*titulo de bienvenido*/
     position: absolute;
     font-size: 9em;
-    color: #ff0095;
-    text-shadow: 2px 4px 5px #000000;
+    color: #ff4080;
+    text-shadow: 12px 12px 12px #000000;
     z-index: 999;
 }
 
@@ -180,6 +180,7 @@ transform: scale(1);
     font-size: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     color:#ffffff; 
+    font-size: 25px;
     text-shadow: 2px 4px 5px #000000;
     font-weight: 300;
     position: absolute;
@@ -188,38 +189,49 @@ transform: scale(1);
 }
 
 .sec-texto1{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(52, 116, 0, 0.5);
     max-width: 600px;
     position: relative;
+    color: #ffffff;
+    font-size: 25px;
     padding: 60px 60px;
     margin-bottom: 80px;
-    transform: translateX(160%) translateY(280%);
+    transform: translateX(160%) translateY(150%);
     z-index: 1;
 }
 
 .sec-texto2{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(52, 116, 0, 0.5);
     max-width: 600px;
     position: relative;
+    color: #ffffff;
+    font-size: 25px;
     padding: 60px 60px;
     margin-bottom: 80px;
-    transform: translateX(30%) translateY(350%);
+    transform: translateX(30%) translateY(180%);
     z-index: 1;
 }
 
 .sec-texto3{
-    background-color: rgba(0, 0, 0, 0.5);
+    background-color: rgba(52, 116, 0, 0.5);
     max-width: 600px;
     position: relative;
+    color: #ffffff;
+    font-size: 25px;
     padding: 60px 60px;
     margin-bottom: 80px;
-    transform: translateX(150%) translateY(380%);
+    transform: translateX(150%) translateY(150%);
     z-index: 3;
+}
+
+.sec-texto3 li{
+    color:#ffffff;
+    font-size: 22px;
 }
 
 .sec h2{
     font-size: 3em;
-    color:#ffffff; /*fuente titulo home (cuadro de texto)*/
+    color:#ff8800; /*titulo "nuestra historia comienza asi"*/ 
 }
 
 .sec p{
