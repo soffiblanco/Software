@@ -268,7 +268,7 @@ transform: scale(1);
     overflow: hidden;
     transform: scale(0);
     transition: transform .5s ease, height .2s ease;
-    z-index: 1;
+    z-index: 9999;
 
 
 }
