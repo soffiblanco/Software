@@ -637,15 +637,15 @@ transform: scale(1);
 
 
 /*Pestaña de Games*/
-.games{
+.games {
     display: flex; /* Utiliza flexbox para alinear elementos */
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     justify-content: center; /* Centra horizontalmente los elementos */
     background: #fff; /* Cambia el color de fondo según tu preferencia */
-    padding: 150px 50px; /* Ajusta el espaciado interno según sea necesario */
+    padding-top: 0; /* Ajusta el espaciado interno según sea necesario */
     text-align: left; /* Alinea el texto a la izquierda */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola fila */
-
+    margin: 180px; /*No tocar*/
 }
 .games h2 {
     font-size: 4em;
@@ -653,13 +653,47 @@ transform: scale(1);
     margin-left: auto;
     margin-right: auto;
 }
-.games img {
-    flex: 0 0 50%; /* Permite que los elementos ocupen el 100% del ancho */
-    margin-bottom: 10px; /* Espaciado inferior entre los elementos */
-    font-size: 1em; /* Tamaño del texto */
+
+.LaRuinaSagradaJ1 h3{
+    margin-top: -5%;
+    flex: 0 0 100%; /* Permite que los elementos ocupen el 100% del ancho */
+    margin-bottom: 20px; /* Espaciado inferior entre los elementos */
+    font-size: 2.5em; /* Tamaño del texto */
     color: #000000; /* Color del texto */
-    width: 0px; /* Ancho de las imágenes */
-    margin-top: 0; /* Espaciado superior entre las imágenes y el texto */
+    
+}
+
+.LaRuinaSagradaJ1 p {
+    flex: 0 0 100%; /* Permite que los elementos ocupen el 100% del ancho */
+    margin-bottom: 20px; /* Espaciado inferior entre los elementos */
+    font-size: 2em; /* Tamaño del texto */
+    color: #000000; /* Color del texto */
+    text-align: justify;
+}
+
+.LaRuinaSagradaJ1{
+    max-width: 2000px;
+    margin-top: 100px;
+    margin-left: 180px;
+}
+.gifLRS {
+    float: left; /* Alinea la imagen a la derecha del texto */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    shape-outside: rectangle(0,0,100%,100%); /* Define una forma rectangular alrededor de la imagen */
+    width: 40% !important;
+    margin-top: 10px !important;
+    display:none;
+}
+.imagenLRS {
+    float: left; /* Alinea la imagen a la derecha del texto */
+    margin-right: 20px; /* Espacio entre la imagen y el texto */
+    shape-outside: rectangle(0,0,100%,100%); /* Define una forma rectangular alrededor de la imagen */
+    width: 40% !important;
+    margin-top: 10px !important;
+}
+
+.gifLRS2 {
+    display: none;
 }
 /*Pestaña de Contact*/
 .contact{

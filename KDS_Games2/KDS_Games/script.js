@@ -34,3 +34,15 @@ window.addEventListener('scroll',()=>{
     });
 
 
+    const gifImage = document.getElementById('gifImage');
+    const staticImage = document.getElementById('staticImage');
+    
+    gifImage.addEventListener('mouseenter', () => {
+      staticImage.style.display = 'block';
+      gifImage.style.display = 'none';
+    });
+    
+    staticImage.addEventListener('mouseleave', () => {
+      staticImage.style.display = 'none';
+      gifImage.style.display = 'block';
+    });
