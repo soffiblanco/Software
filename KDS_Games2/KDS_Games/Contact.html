@@ -31,7 +31,7 @@
     
             <div class="form-box login">
                 <h2>Login</h2>
-                <form action="#">
+                <form action="#" name="loginForm">
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-envelope" style="color: #091a27;"></i></span></span>
                         <input type="email" required>
@@ -60,20 +60,20 @@
             
             <div class="form-box register">
                 <h2>Registration</h2>
-                <form action="#">
+                <form action="#" name="signupForm">
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-user"></i></span></span>
-                        <input type="text" required>
+                        <input type="text" id="name" required>
                         <label>Username</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"><i class="fa-solid fa-envelope" style="color: #091a27;"></i></span></span>
-                        <input type="email" required>
+                        <input type="email" id="email" required>
                         <label>Email</label>
                     </div>
                     <div class="input-box">
                         <span class="icon"> <i class="fa-solid fa-lock" style="color: #091a27;"></i></span></span>
-                        <input type="password" required>
+                        <input type="password" id="password" required>
                         <label>Password</label>
                     </div>
                     <div class="remember-forgot">
@@ -81,7 +81,7 @@
                         I agree to the terms & conditions
                         </label>
                     </div>
-                    <button type="submit" class="btn">Register</button>
+                    <button type="submit" class="btn" value="Registro">Register</button>
                     <div class="login-register">
                         <p>Alredy have an account?<a href="#"
                         class="login-link">Login</a></p>
@@ -131,5 +131,8 @@
         </section>
 
         <script src="script.js"></script>
+        <script src="login.js"></script>
+        <script src="signup.js"></script>
+
     </body>
 </html>
