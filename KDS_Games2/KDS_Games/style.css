@@ -635,10 +635,9 @@ transform: scale(1);
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     justify-content: center; /* Centra horizontalmente los elementos */
     background: #fff; /* Cambia el color de fondo según tu preferencia */
-    padding-top: 0; /* Ajusta el espaciado interno según sea necesario */
     text-align: left; /* Alinea el texto a la izquierda */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola fila */
-    margin: 180px; /*No tocar*/
+    margin: 120px; /*No tocar*/
 }
 .games h2 {
     font-size: 4em;
@@ -667,14 +666,14 @@ transform: scale(1);
 .LaRuinaSagradaJ1{
     max-width: 2000px;
     margin-top: 100px;
-    margin-left: 180px;
+    margin-left: 18px;
 }
 .gifLRS {
     float: left; /* Alinea la imagen a la derecha del texto */
     margin-right: 20px; /* Espacio entre la imagen y el texto */
     shape-outside: rectangle(0,0,100%,100%); /* Define una forma rectangular alrededor de la imagen */
     width: 40% !important;
-    margin-top: 10px !important;
+    margin-top: 5px !important;
     display:none;
 }
 .imagenLRS {
@@ -682,12 +681,9 @@ transform: scale(1);
     margin-right: 20px; /* Espacio entre la imagen y el texto */
     shape-outside: rectangle(0,0,100%,100%); /* Define una forma rectangular alrededor de la imagen */
     width: 40% !important;
-    margin-top: 10px !important;
+    margin-top: 5px !important;
 }
 
-.gifLRS2 {
-    display: none;
-}
 /*Pestaña de Contact*/
 .contact{
     display: flex; /* Utiliza flexbox para alinear elementos */
