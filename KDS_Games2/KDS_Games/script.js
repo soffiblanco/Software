@@ -46,3 +46,5 @@ window.addEventListener('scroll',()=>{
       staticImage.style.display = 'none';
       gifImage.style.display = 'block';
     });
+
+    

@@ -58,3 +58,15 @@ auth.onAuthStateChanged(user=>{
         console.log("Usuario inactivo");
     }
 });
+
+const btnLoginPopup = document.querySelector('.btnLogin-popup');
+const loginPopup = document.querySelector('.login-popup');
+const btnCerrar = document.querySelector('#cerrar');
+
+btnLoginPopup.addEventListener('click', () => {
+    loginPopup.classList.add('active');
+});
+
+btnCerrar.addEventListener('click', () => {
+    loginPopup.classList.remove('active');
+});
