@@ -360,6 +360,17 @@ transform: scale(1);
     
 }
 
+.Informacion_Contacto {
+    background-color: #6871c0 ; /* Color de fondo de la franja */
+    padding: 25px; /* Espacio alrededor del contenido */
+    text-align: center; /* Alineación del texto */
+}
+.TituloC{
+    font-size: 1.5em;
+}
+.Correo{
+    font-size: 1.4em;
+}
 
 /*Pestaña de News*/
 .news{
