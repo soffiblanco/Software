@@ -250,6 +250,25 @@ transform: scale(1);
 
 /*LOGIN*/
 
+
+.icon-close{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 45px;
+    height: 45px;
+    background: #162938;
+    font-size: 1.5em;
+    color: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-bottom-left-radius: 20px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+
 :root {
     --color-fondo: #ffffff;
     --color-borde: #434875;
@@ -378,6 +397,7 @@ label {
 	margin-bottom: 10px;
 	color: #444; 
 }
+
 
 label i {
 	margin-right: 10px;
@@ -624,8 +644,12 @@ label i {
     flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola fila */
     margin: 7.5%;
     margin-top: auto;
-}
 
+
+}
+.texto-justificado {
+    text-align: justify;
+}
 .news h2 {
     font-size: 5em;
     color: #09168b;

@@ -75,3 +75,8 @@ function mostrarLogin() {
     registroSection.style.display = 'block'; // Mostrar la opción de registro
     loginSection.style.display = 'block';
 }
+
+function cerrarVentanaEmergente() {
+    var loginPopup = document.getElementById('login-popup');
+    loginPopup.style.display = 'none';
+}
