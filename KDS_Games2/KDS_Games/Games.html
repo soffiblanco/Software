@@ -46,6 +46,7 @@
             </div>
     
             <div id="registro-link" class="form-box register">
+                <div id="registro-screen" class="screen" style="display: none;"></div>
                 <form>
                     <h2>Registro</h2>
                     <label for="email"><i class="fas fa-envelope"></i>Correo electrónico:</label>
@@ -55,8 +56,10 @@
                     <input type="password" id="passwordreg" name="password" required>
                     <button type="submit" id="registro">Registrarse</button>
                     <p>¿Ya tienes una cuenta? <br><a href="#" id="login-link" onclick="mostrarLogin()">Inicia sesión aquí</a></p>
-                    <div id="registro-screen" class="screen" style="display: none;"></div>
+
                 </form>
+                <button id="showRegistroForm" class="btnLogin-popup">Registrarse</button>
+                <div id="registro-screen" class="screen" style="display: none;"></div>
             </div>
         </div>
            
@@ -74,8 +77,8 @@
 
 
         <script src="script.js"></script>
-        <script src="login.js"></script>
-        <script src="registro.js"></script>
+        <script type="module" src="/login.js"></script>
+        <script type="module" src="/registro.js"></script>
 
     </body>
 </html>
