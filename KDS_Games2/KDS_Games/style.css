@@ -248,6 +248,246 @@ transform: scale(1);
     margin:  auto;
 }
 
+/*LOGIN*/
+
+:root {
+    --color-fondo: #ffffff;
+    --color-borde: #434875;
+    --color-texto: #434875;
+    --color-placeholder: #b5b5b5;
+    --color-boton: #434875;
+    --color-boton-hover: #434875;
+    --color-boton-texto: #ffffff;
+    --color-link: #434875;
+    --color-link-hover: #434875;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+    padding: 2rem;
+    border: 2px solid var(--color-borde);
+    border-radius: 1rem;
+    max-width: 35rem;
+    margin-top: 150px !important;
+}
+  
+label {
+  font-size: 1.25rem;
+  margin-bottom: 0.5rem;
+}
+
+input[type='text'],
+input[type='password'] {
+  background-color: transparent;
+  border: none;
+  border-bottom: 2px solid var(--color-borde);
+  color: var(--color-texto);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
+  padding: 0.5rem;
+  margin-bottom: 1.5rem;
+  width: 100%;
+}
+
+input[type='text']:focus,
+input[type='password']:focus {
+  outline: none;
+  border-color: var(--color-boton);
+}
+
+input[type='text']::placeholder,
+input[type='password']::placeholder {
+  color: var(--color-placeholder);
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
+}
+
+button[type='submit'] {
+  background-color: var(--color-boton);
+  border: none;
+  border-radius: 1rem;
+  color: var(--color-boton-texto);
+  cursor: pointer;
+  font-family: 'Roboto', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  margin-top: 1.5rem;
+  padding: 0.75rem 1.5rem;
+  transition: background-color 0.2s ease-in-out;
+}
+
+button[type='submit']:hover {
+  background-color: var(--color-boton-hover);
+}
+
+.login-popup {
+  display: none; /* Por defecto oculto */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5); /* Fondo semitransparente */
+  z-index: 9999; /* Z-index alto para estar encima de otros elementos */
+}
+.login-popup.active {
+  display: flex; /* Mostrar cuando activo */
+  justify-content: center;
+  align-items: center;
+}
+
+/*REGISTRO*/
+
+/* Estilos generales */
+body {
+	font-family: "Pixelify Sans", sans-serif;
+	font-size: 16px;
+	background-color: transparent;
+	color: #333;
+}
+
+h2 {
+	text-align: center;
+	font-size: 36px;
+	margin: 30px 0;
+	color: #444;
+	font-family:"Pixelify Sans", sans-serif;
+}
+
+form {
+	max-width: 500px;
+	margin: 0 auto;
+	background-color: #fff;
+	padding: 2rem;
+	box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+	border-radius: 40px;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: left;
+	
+}
+
+label {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: #444; 
+}
+
+label i {
+	margin-right: 10px;
+	
+}
+
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+	display: block;
+	width: 100%;
+	padding: 10px;
+	font-size: 16px;
+	border: none;
+	border-radius: 0;
+	background-color: transparent;
+	border-bottom: 1px solid #434875;
+	margin-bottom: 20px;
+	color: #333;
+	transition: border-bottom-color 0.3seg;
+}
+
+
+
+button[type="submit"] {
+	display: block;
+	margin: 20px auto 0;
+	padding: 10px 20px;
+	font-size: 20px;
+	color: #fff;
+	background-color: #434875;
+	border: none;
+	border-radius: 10px;
+	box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.3);
+	cursor: pointer;
+}
+button[type="submit"]:hover {
+	background-color: #434875;
+}
+
+a {
+	color: #333;
+}
+
+a:hover {
+	color: #444;
+}
+p {
+	margin-top: 20px;
+	font-size: 18px;
+	text-align: center;
+}
+
+/* Estilos específicos del formulario de registro */
+.screen {
+    display: none;
+    position: absolute; /* Cambia a posición absoluta */
+    top: 50%; /* Alinea el formulario en el centro vertical */
+    left: 50%; /* Alinea el formulario en el centro horizontal */
+    transform: translate(-50%, -50%); /* Centra el formulario */
+    background-color: transparent; /* Elimina el color de fondo */
+    width: 300px; /* Ajusta el ancho según sea necesario */
+    padding: 20px; /* Añade relleno al formulario */
+    border-radius: 10px; /* Opcional: agrega bordes redondeados */
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Agrega sombra */
+}
+
+
+
+#username:focus,
+#email:focus,
+#password:focus,
+#password_confirm:focus {
+	background-color: #fff;
+	box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.3);
+}
+
+#username:invalid,
+#email:invalid,
+#password:invalid,
+#password_confirm:invalid {
+	border-color: #F44336;
+}
+
+#username:valid,
+#email:valid,
+#password:valid,
+#password_confirm:valid {
+	border-color: #4CAF50;
+}
+
+#password_confirm {
+	margin-bottom: 40px;
+}
+
+label {
+	display: block;
+	font-size: 18px;
+	margin-bottom: 10px;
+	color: #444;
+	text-align: left; /* Alinea el texto a la izquierda */
+}
+label i {
+	margin-right: 10px;
+
+}
+
+
+
 /* Agregado para la sección "About Us" */
 /* Modificado para la sección "About Us" */
 .about {
@@ -504,4 +744,11 @@ transform: scale(1);
     width: 40% !important;
     margin-top: 5px !important;
 }
+
+@media screen and (max-width: 600px) {
+    form {
+      max-width: none;
+    }
+  }
+  
 
