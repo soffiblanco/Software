@@ -128,8 +128,8 @@ transform: scale(1);
 #text{  /*titulo de bienvenido*/
     position: absolute;
     font-size: 9em;
-    color: #ff4080;
-    text-shadow: 12px 12px 12px #000000;
+    color: #ffffff;
+    text-shadow: 10px 5px 5px #000000;
     z-index: 999;
 }
 
@@ -230,7 +230,8 @@ transform: scale(1);
 
 .sec h2{
     font-size: 3em;
-    color:#ff8800; /*titulo "nuestra historia comienza asi"*/ 
+    color: #fff; /*titulo "nuestra historia comienza asi"*/ 
+    text-shadow: 12px 14px 15px #000000;
 }
 
 .sec p{
