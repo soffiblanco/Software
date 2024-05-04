@@ -10,7 +10,7 @@ window.addEventListener('scroll',()=>{
     fondoCasasIzquierda.style.left = value * -1.2 + 'px';
     fondoCasasDerecha6.style.left = value * 1.2 + 'px';
 });
-    /*
+    /* código anterior para boton login
 const wrapper=document.querySelector('.wrapper');
 const loginLink=document.querySelector('.login-link');
 const registerLink =document.querySelector('.register-link');
@@ -31,7 +31,7 @@ btnPopup.addEventListener('click',()=>{
 iconClose.addEventListener('click',()=>{
     wrapper.classList.remove('active-popup');
 });
-
+*/
 const gifImage = document.getElementById('gifImage');
 const staticImage = document.getElementById('staticImage');
     
@@ -44,7 +44,7 @@ staticImage.addEventListener('mouseleave', () => {
   staticImage.style.display = 'none';
   gifImage.style.display = 'block';
 });
-*/
+
 
 function toggleLoginPopup() {
     var loginPopup = document.getElementById('login-popup');
