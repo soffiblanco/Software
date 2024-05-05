@@ -61,9 +61,7 @@ input[type="password"] {
 	transition: border-bottom-color 0.3seg;
 }
 
-
-
-button[type="submit"] {
+button[type="button"] {
 	display: block;
 	margin: 20px auto 0;
 	padding: 10px 20px;
@@ -76,7 +74,7 @@ button[type="submit"] {
 	cursor: pointer;
 }
 
-button[type="submit"]:hover {
+button[type="button"]:hover {
 	background-color: #434875;
 }
 
@@ -95,21 +93,6 @@ p {
 }
 
 /* Estilos específicos del formulario de registro */
-.screen {
-    display: none;
-    position: absolute; /* Cambia a posición absoluta */
-    top: 50%; /* Alinea el formulario en el centro vertical */
-    left: 50%; /* Alinea el formulario en el centro horizontal */
-    transform: translate(-50%, -50%); /* Centra el formulario */
-    background-color: transparent; /* Elimina el color de fondo */
-    width: 300px; /* Ajusta el ancho según sea necesario */
-    padding: 20px; /* Añade relleno al formulario */
-    border-radius: 10px; /* Opcional: agrega bordes redondeados */
-    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1); /* Agrega sombra */
-}
-
-
-
 #username:focus,
 #email:focus,
 #password:focus,
@@ -146,4 +129,34 @@ label {
 label i {
 	margin-right: 10px;
 
+}
+
+.success-message, .error-message {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 15px 20px;
+    border-radius: 10px;
+    font-size: 18px;
+    color: #fff;
+    z-index: 9999;
+    transition: opacity 0.5s ease-in-out;
+}
+
+.success-message {
+    background-color: #4CAF50; /* Color verde para mensaje de éxito */
+}
+
+.error-message {
+    background-color: #F44336; /* Color rojo para mensaje de error */
+}
+
+/* Opcional: Estilos para animar la aparición y desaparición de los mensajes */
+.success-message.show, .error-message.show {
+    opacity: 1;
+}
+
+.success-message.hide, .error-message.hide {
+    opacity: 0;
 }
