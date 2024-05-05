@@ -19,25 +19,17 @@ const auth = getAuth(app);
 
 const loginBtn = document.getElementById('login');
 const cerrarBtn = document.getElementById('cerrar');
-const registro = document.getElementById('registro');
-const registroForm = document.getElementById('registro-form');
-
-registroForm.style.display = 'none';
-
-registro.addEventListener('click', (e)=>{
-    e.preventDefault();
-    registroForm.style.display='block';
-})
 
 loginBtn.addEventListener('click', (e)=>{
     e.preventDefault();
+    console.log("Botón 'Ingresar' clickeado"); // Esta es la línea que agregamos para la prueba
     var email = document.getElementById('emaillog').value;
     var password = document.getElementById('passwordlog').value;
 
     signInWithEmailAndPassword(auth, email, password).then(cred =>{
         showSuccessMessage ("Usuario logueado");
         if(auth.currentUser.emailVerified){
-            window.open("https://www.google.com/");
+            window.open('Home.html');
         } else{
             auth.signOut();
         }
