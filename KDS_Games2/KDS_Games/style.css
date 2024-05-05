@@ -510,6 +510,10 @@ transform: scale(1);
     margin-top: 5px !important;
 }
 
+.espacio-h1 {
+    margin-top: 50px; /* Ajusta el valor según sea necesario */
+}
+
 @media screen and (max-width: 600px) {
     form {
       max-width: none;
