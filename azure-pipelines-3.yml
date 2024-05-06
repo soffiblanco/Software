@@ -10,17 +10,25 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
+  - script: |
+      if [ ! -f "path/to/your/file.json" ]; then
+        echo "El archivo JSON no se encuentra. Abortando el pipeline."
+        exit 1
+      fi
+    displayName: 'Verificar existencia del archivo JSON'
+
   - task: CopyFiles@2
     inputs:
-      SourceFolder: '$(Build.SourcesDirectory)'  # Carpeta donde se encuentran los archivos de tu proyecto
-      Contents: '**'  # Copiar todos los archivos
-      TargetFolder: '$(Build.ArtifactStagingDirectory)'  # Carpeta de destino para los archivos de salida
+      SourceFolder: '$(Build.SourcesDirectory)'  
+      Contents: '**'  
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'  
 
   - task: PublishBuildArtifacts@1
     inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)'  # Ruta donde se encuentran los archivos de salida
-      ArtifactName: 'web-artifacts'  # Nombre del artefacto que se publicará
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'  
+      ArtifactName: 'web-artifacts'  
 
   # Agrega más pasos según tus necesidades, como desplegar la aplicación, etc.
+
 
 
