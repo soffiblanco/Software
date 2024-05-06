@@ -17,7 +17,10 @@ window.addEventListener('scroll',()=>{
 
 const gifImage = document.getElementById('gifImage');
 const staticImage = document.getElementById('staticImage');
-    
+const driveLink = document.getElementById('driveLink');
+
+driveLink.href = "https://drive.google.com/uc?export=download&id=1Kk6EZ9RaqrQ5_tYnEptKa7xvVr9gqsdF";
+   
 gifImage.addEventListener('mouseenter', () => {  
     staticImage.style.display = 'block';  
     gifImage.style.display = 'none';    
@@ -28,6 +31,10 @@ staticImage.addEventListener('mouseleave', () => {
   gifImage.style.display = 'block';
 });
 
+staticImage.addEventListener('click', () => {
+    // Redirigir al usuario al enlace de Google Drive
+    window.location.href = "https://drive.google.com/uc?export=download&id=1Kk6EZ9RaqrQ5_tYnEptKa7xvVr9gqsdF";
+});
 
 function toggleLoginPopup() {
     var loginPopup = document.getElementById('login-popup');
