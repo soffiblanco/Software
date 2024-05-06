@@ -53,7 +53,7 @@ registro.addEventListener('click', (e)=>{
         showSuccessMessage("Usuario creado");
         sendEmailVerification(auth.currentUser).then(()=>{
             showSuccessMessage('Se ha enviado un correo de verificación');
-            window.location.href = "Home.html";
+            window.location.href = "Login.html";
         });
     }).catch(error => {
         console.error('Error code: ', error.code);
