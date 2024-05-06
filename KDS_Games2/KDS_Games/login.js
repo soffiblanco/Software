@@ -22,7 +22,7 @@ const cerrarBtn = document.getElementById('cerrar');
 
 loginBtn.addEventListener('click', (e)=>{
     e.preventDefault();
-    console.log("Botón 'Ingresar' clickeado"); // Esta es la línea que agregamos para la prueba
+   
     var email = document.getElementById('emaillog').value;
     var password = document.getElementById('passwordlog').value;
 
@@ -37,7 +37,14 @@ loginBtn.addEventListener('click', (e)=>{
         console.log('Código de error: ', error.code);
         const errorCode = error.code;
 
-        switch(error.code){
+        // Validación adicional para la contraseña incorrecta
+        if (error.code === 'auth/wrong-password') {
+            console.log('Contrasena incorrecta reconocida');
+            showErrorMessage('Contraseña incorrecta');
+            return; // Detener la ejecución si la contraseña es incorrecta
+        }
+
+        switch(errorCode){
             case 'auth/invalid-email':
                 showErrorMessage('El correo no es válido');
                 break;
@@ -46,7 +53,7 @@ loginBtn.addEventListener('click', (e)=>{
                 break;
             case 'auth/user-not-found':
                 showErrorMessage('El usuario no existe');
-            case 'auth/wrong-password':
+            case 'auth/invalid-login-credentials':
                 showErrorMessage('Contraseña incorrecta');
                 break;
             case 'auth/weak-password':
