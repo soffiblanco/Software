@@ -2,7 +2,7 @@ import { initializeApp } from 'https://www.gstatic.com/firebasejs/9.0.2/firebase
 
 import {sendEmailVerification, getAuth, signInWithPopup, 
     createUserWithEmailAndPassword, signInWithEmailAndPassword,  
-    onAuthStateChanged} from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js';
+    onAuthStateChanged, sendPasswordResetEmail} from 'https://www.gstatic.com/firebasejs/9.0.2/firebase-auth.js';
 
 const firebaseConfig = {
   apiKey: "AIzaSyCxoa1xglcKDHjyE9liCMknvqvw1blqopY",
@@ -87,6 +87,27 @@ loginBtn.addEventListener('click', (e)=>{
      
     });
 });
+
+
+//forgot password
+document.getElementById('ForgotPassword').addEventListener('click', (e) => {
+    e.preventDefault(); // Esto evita que el enlace redireccione a otra página
+
+    var email = prompt("Por favor ingrese su correo electrónico:");
+
+    if (email) {
+        sendPasswordResetEmail(auth, email)
+            .then(() => {
+                console.log("Correo electrónico para restablecimiento de contraseña enviado");
+                showSuccessMessage("Se ha enviado un correo electrónico para restablecer la contraseña a " + email);
+            })
+            .catch((error) => {
+                console.error("Error al enviar el correo electrónico de restablecimiento de contraseña");
+                showErrorMessage("Error al enviar el correo electrónico para restablecer la contraseña: " + error.message);
+            });
+    }
+});
+
 
 document.getElementById("Regresar").addEventListener("click", function(){
     window.location.href = "Home.html";
