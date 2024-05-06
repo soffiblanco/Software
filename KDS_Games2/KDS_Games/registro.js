@@ -18,7 +18,13 @@ const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
 function validarContraseña(contraseña){
-    var expresionRegular= /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+   
+    // Verificar si la contraseña tiene al menos 6 caracteres
+   if (contraseña.length < 6) {
+    return false;
+}
+   
+    var expresionRegular= /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])(?=.*[a-zA-Z0-9]).{6,}$/;
     return expresionRegular.test(contraseña);
 }
 
@@ -26,10 +32,7 @@ registro.addEventListener('click', (e)=>{
     var email = document.getElementById('emailreg').value;
     var password = document.getElementById('passwordreg').value;
 
-    if(!validarContraseña(password)){
-        showErrorMessage('La contraseña no cumple con los requisitos');
-        return;
-    }
+  
 
     createUserWithEmailAndPassword(auth, email, password).then(cred =>{
         showSuccessMessage("Usuario creado");
@@ -47,12 +50,18 @@ registro.addEventListener('click', (e)=>{
             case 'auth/invalid-email':
                 showErrorMessage('El correo no es válido');
                 break;
-            case 'auth/weak-password':
-                showErrorMessage('La contraseña debe tener al menos 6 caracteres');
-                break;
             default:
                 showErrorMessage('Hubo un error');
                 break;
+        }
+
+        if(!validarContraseña(password)){
+            if (password.length < 6) {
+                showErrorMessage('La contraseña debe tener al menos 6 caracteres');
+            } else {
+                showErrorMessage('La contraseña no cumple con los requisitos');
+            }
+            return;
         }
     })
 })
