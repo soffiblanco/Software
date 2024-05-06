@@ -1,8 +1,11 @@
 {
-    "name": "kds-games",
-    "version": "1.0.0",
-    "description": "Página web de la empresa KDS^2 Games que crearon estudiantes universitarias para promover la cultura guatemalteca por medio de juegos.",
-    "main": "Software",
-    "author": "Sofía Blanco, Katherine Diéguez, Daniela Natareno, Sofía Sandoval",
-    "license": "MIT"
+  "name": "kds-games",
+  "version": "1.0.0",
+  "description": "Página web de la empresa KDS^2 Games que crearon estudiantes universitarias para promover la cultura guatemalteca por medio de juegos.",
+  "main": "Software",
+  "author": "Sofía Blanco, Katherine Diéguez, Daniela Natareno, Sofía Sandoval",
+  "license": "MIT",
+  "scripts": {
+    "build": "comando-de-construcción-aquí"
   }
+}
