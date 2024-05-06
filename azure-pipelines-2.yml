@@ -1,0 +1,23 @@
+trigger:
+- master
+
+pool:
+  vmImage: 'ubuntu-latest'
+
+steps:
+- task: NodeTool@0
+  inputs:
+    versionSpec: '14.x'
+    displayName: 'Install Node.js'
+
+- script: |
+    npm install
+    npm run build
+    npm test
+  displayName: 'Install dependencies, build, and test'
+
+- script: |
+    # Aquí colocarías los comandos necesarios para desplegar tu aplicación en Azure, como por ejemplo, utilizando Azure App Service o Azure Functions.
+  displayName: 'Deploy to Azure'
+  condition: eq(variables['Build.SourceBranch'], 'refs/heads/master')
+
