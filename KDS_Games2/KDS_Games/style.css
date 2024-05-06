@@ -257,6 +257,7 @@ transform: scale(1);
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     justify-content: center; /* Centra horizontalmente los elementos */
     background: #fff; /* Cambia el color de fondo según tu preferencia */
+    padding: 250px 10px;
     padding-top: 0; /* Ajusta el espaciado interno según sea necesario */
     text-align: left; /* Alinea el texto a la izquierda */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola fila */
@@ -369,10 +370,12 @@ transform: scale(1);
 }
 .TituloC{
     font-size: 1.5em;
+    color: #ffffff;
 }
 .Correo{
     margin-top: -5px;
     font-size: 1.4em;
+    color: #ffffff !important;
 }
 
 /*Pestaña de News*/
@@ -381,7 +384,7 @@ transform: scale(1);
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     justify-content: center; /* Centra horizontalmente los elementos */
     background: #fff; /* Cambia el color de fondo según tu preferencia */
-    padding: 150px 50px; /* Ajusta el espaciado interno según sea necesario */
+    padding: 250px 10px; /* Ajusta el espaciado interno según sea necesario */
     text-align: justify; /* Alinea el texto a la izquierda */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola fila */
     margin: 7.5%;
@@ -461,6 +464,7 @@ transform: scale(1);
     display: flex; /* Utiliza flexbox para alinear elementos */
     align-items: flex-start; /* Alinea los elementos en la parte superior */
     justify-content: center; /* Centra horizontalmente los elementos */
+    padding: 250px 10px;
     background: #fff; /* Cambia el color de fondo según tu preferencia */
     text-align: left; /* Alinea el texto a la izquierda */
     flex-wrap: wrap; /* Permite que los elementos se envuelvan si no caben en una sola fila */

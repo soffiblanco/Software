@@ -4,6 +4,10 @@
 
 /* Estilos generales */
 body {
+	background-image: url('/KDS_Games2/KDS_Games/Imagenes/fondoAgua.png'); 
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat; 
 	font-family: "Pixelify Sans", sans-serif;
 	font-size: 16px;
 	background-color: transparent;
