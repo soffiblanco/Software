@@ -17,6 +17,8 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+window.auth = auth;
+
 // Cerrar sesión si hay un usuario autenticado al cargar la página
 if (auth.currentUser) {
     auth.signOut().then(() => {

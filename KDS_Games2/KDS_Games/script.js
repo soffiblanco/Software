@@ -15,6 +15,16 @@ window.addEventListener('scroll',()=>{
   
 });
 
+
+// Antes de usar auth, asegúrate de que la variable exista en el objeto window
+if (window.auth) {
+    const user = window.auth.currentUser;
+    // Resto de tu lógica que utiliza auth...
+} else {
+    console.error('No se encontró la variable auth en el objeto window.');
+}
+
+
 const gifImage = document.getElementById('gifImage');
 const staticImage = document.getElementById('staticImage');
 const driveLink = document.getElementById('driveLink');
@@ -32,8 +42,25 @@ staticImage.addEventListener('mouseleave', () => {
 });
 
 staticImage.addEventListener('click', () => {
-    // Redirigir al usuario al enlace de Google Drive
-    window.location.href = "https://drive.google.com/uc?export=download&id=1Kk6EZ9RaqrQ5_tYnEptKa7xvVr9gqsdF";
+    console.log('Se hizo clic')
+    // Verificar si hay un usuario autenticado
+    const user = auth.currentUser;
+    if (user) {
+        console.log('hay sesion')
+        // Si hay un usuario autenticado, redirigir al enlace de Google Drive después de 2 segundos
+        setTimeout(() => {
+            window.location.href = "https://drive.google.com/uc?export=download&id=1Kk6EZ9RaqrQ5_tYnEptKa7xvVr9gqsdF";
+        }, 4500); // Retraso de 2 segundos
+
+        // Mostrar mensaje de éxito con retraso
+        setTimeout(() => {
+            showSuccessMessage("Su solicitud fue realizada con éxito, será redirigido al link de descarga.");
+        }, 1000); // Retraso de 1 segundo para que aparezca antes de la redirección
+    } else {
+        console.log('no hay sesion')
+        // Si no hay un usuario autenticado, mostrar un mensaje indicando que es necesario iniciar sesión
+        showErrorMessage("Debes iniciar sesión para descargar el juego.");
+    }
 });
 
 function toggleLoginPopup() {
@@ -69,4 +96,24 @@ function mostrarLogin() {
 function cerrarVentanaEmergente() {
     var loginPopup = document.getElementById('login-popup');
     loginPopup.style.display = 'none';
+}
+
+function showSuccessMessage(message) {
+    const successMessage = document.createElement('div');
+    successMessage.textContent = message;
+    successMessage.classList.add('success-message');
+    document.body.appendChild(successMessage);
+    setTimeout(() => {
+        successMessage.remove();
+    }, 3000);
+}
+
+function showErrorMessage(message) {
+    const errorMessage = document.createElement('div');
+    errorMessage.textContent = message;
+    errorMessage.classList.add('error-message');
+    document.body.appendChild(errorMessage);
+    setTimeout(() => {
+        errorMessage.remove();
+    }, 3000);
 }
