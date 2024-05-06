@@ -10,20 +10,17 @@ pool:
   vmImage: 'ubuntu-latest'
 
 steps:
-  - task: NodeTool@0
+  - task: CopyFiles@2
     inputs:
-      versionSpec: '10.x'
-    displayName: 'Install Node.js'
-
-  - script: |
-      npm install
-      npm run build
-    displayName: 'npm install and build'
+      SourceFolder: '$(Build.SourcesDirectory)'  # Carpeta donde se encuentran los archivos de tu proyecto
+      Contents: '**'  # Copiar todos los archivos
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'  # Carpeta de destino para los archivos de salida
 
   - task: PublishBuildArtifacts@1
     inputs:
-      PathtoPublish: 'dist'  # Ruta donde se encuentran los archivos generados después de la construcción
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'  # Ruta donde se encuentran los archivos de salida
       ArtifactName: 'web-artifacts'  # Nombre del artefacto que se publicará
 
-  # Agrega más pasos según tus necesidades, como ejecutar pruebas, desplegar la aplicación, etc.
+  # Agrega más pasos según tus necesidades, como desplegar la aplicación, etc.
+
 
