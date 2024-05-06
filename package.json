@@ -7,5 +7,6 @@
   "license": "MIT",
   "scripts": {
     "build": "comando-de-construcción-aquí"
-  }
+    "start": "node index.js"
+  },
 }
