@@ -17,14 +17,30 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+// Cerrar sesión si hay un usuario autenticado al cargar la página
+if (auth.currentUser) {
+    auth.signOut().then(() => {
+        console.log('Sesión cerrada al cargar la página');
+    }).catch((error) => {
+        console.error('Error al cerrar sesión al cargar la página:', error);
+    });
+}
+
 const loginBtn = document.getElementById('login');
 const cerrarBtn = document.getElementById('cerrar');
+
 
 loginBtn.addEventListener('click', (e)=>{
     e.preventDefault();
    
     var email = document.getElementById('emaillog').value;
     var password = document.getElementById('passwordlog').value;
+
+             // Verificar si ya hay un usuario autenticado antes de intentar iniciar sesión
+             if(auth.currentUser) {
+                showErrorMessage("Ya hay una sesion iniciada");
+                return; // Detener la ejecución
+            }
 
     signInWithEmailAndPassword(auth, email, password).then(cred =>{
         showSuccessMessage ("Usuario logueado");
@@ -33,9 +49,13 @@ loginBtn.addEventListener('click', (e)=>{
         } else{
             auth.signOut();
         }
+
+
     }).catch(error => {
         console.log('Código de error: ', error.code);
         const errorCode = error.code;
+
+ 
 
         // Validación adicional para la contraseña incorrecta
         if (error.code === 'auth/wrong-password') {
@@ -63,7 +83,8 @@ loginBtn.addEventListener('click', (e)=>{
                 showErrorMessage('Se ha producido un error');
                 break;
         }
-        
+  
+     
     });
 });
 
