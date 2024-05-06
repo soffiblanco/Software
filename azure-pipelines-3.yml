@@ -11,12 +11,13 @@ pool:
 
 steps:
   - script: |
-      if [ ! -f "path/to/your/file.json" ]; then
-        echo "El archivo JSON no se encuentra. Abortando el pipeline."
+      if [ ! -f "package.json" ]; then
+        echo "El archivo package.json no se encuentra. Abortando el pipeline."
         exit 1
       fi
     displayName: 'Verificar existencia del archivo JSON'
 
+  # Si el archivo JSON está presente, continuar con los pasos del pipeline
   - task: CopyFiles@2
     inputs:
       SourceFolder: '$(Build.SourcesDirectory)'  
