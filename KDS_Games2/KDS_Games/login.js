@@ -60,6 +60,10 @@ loginBtn.addEventListener('click', (e)=>{
     });
 });
 
+document.getElementById("Regresar").addEventListener("click", function(){
+    window.location.href = "Home.html";
+})
+
 cerrarBtn.addEventListener('click', (e)=>{
     auth.signOut().then(()=>{
         showSuccessMessage('Sesión cerrada');
@@ -67,6 +71,8 @@ cerrarBtn.addEventListener('click', (e)=>{
         showErrorMessage('Error al cerrar sesión');
     });
 })
+
+
 
 
 function showSuccessMessage(message) {

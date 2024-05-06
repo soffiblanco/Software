@@ -128,8 +128,8 @@ transform: scale(1);
 #text{  /*titulo de bienvenido*/
     position: absolute;
     font-size: 9em;
-    color: #ffffff;
-    text-shadow: 10px 5px 5px #000000;
+    color: #ae00ff;
+    text-shadow: 10px 10px 10px #000000;
     z-index: 999;
 }
 
@@ -178,7 +178,7 @@ transform: scale(1);
 .sec-titulo{ /*La historia comienza asi titulo*/
     font-size: 25px;
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    color:#ffffff; 
+    color:#ff9900; 
     font-size: 25px;
     text-shadow: 2px 4px 5px #000000;
     font-weight: 300;

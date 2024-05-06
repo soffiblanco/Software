@@ -17,9 +17,19 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
+function validarContraseña(contraseña){
+    var expresionRegular= /^[a-zA-Z0-9!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]*$/;
+    return expresionRegular.test(contraseña);
+}
+
 registro.addEventListener('click', (e)=>{
     var email = document.getElementById('emailreg').value;
     var password = document.getElementById('passwordreg').value;
+
+    if(!validarContraseña(password)){
+        showErrorMessage('La contraseña no cumple con los requisitos');
+        return;
+    }
 
     createUserWithEmailAndPassword(auth, email, password).then(cred =>{
         showSuccessMessage("Usuario creado");
@@ -44,8 +54,11 @@ registro.addEventListener('click', (e)=>{
                 showErrorMessage('Hubo un error');
                 break;
         }
-
     })
+})
+
+document.getElementById("Regresar").addEventListener("click", function(){
+    window.location.href = "Home.html";
 })
 
 function showSuccessMessage(message) {
