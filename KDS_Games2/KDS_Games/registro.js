@@ -17,27 +17,43 @@ const firebaseConfig = {
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);
 
-function validarContraseña(contraseña){
-   
+function validarContraseña(contraseña) {
     // Verificar si la contraseña tiene al menos 6 caracteres
-   if (contraseña.length < 6) {
-    return false;
-}
-   
-    var expresionRegular= /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])(?=.*[a-zA-Z0-9]).{6,}$/;
-    return expresionRegular.test(contraseña);
+    var longitudSuficiente = contraseña.length >= 6;
+
+    // Verificar si la contraseña contiene al menos un carácter especial
+    var contieneCaracterEspecial = /^(?=.*[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?])/.test(contraseña);
+
+    return {
+        longitudSuficiente: longitudSuficiente,
+        contieneCaracterEspecial: contieneCaracterEspecial
+    };
 }
 
 registro.addEventListener('click', (e)=>{
     var email = document.getElementById('emailreg').value;
     var password = document.getElementById('passwordreg').value;
 
-  
+ // Verificar si la contraseña cumple con los requisitos de la expresión regular
+ var validacionContraseña = validarContraseña(password);
+
+ if (!validacionContraseña.longitudSuficiente && !validacionContraseña.contieneCaracterEspecial) {
+     showErrorMessage('La contraseña debe tener al menos 6 caracteres y contener al menos un carácter especial');
+     return; // Salir de la función si la contraseña no cumple con los requisitos
+ } else if (!validacionContraseña.longitudSuficiente) {
+     showErrorMessage('La contraseña debe tener al menos 6 caracteres');
+     return; // Salir de la función si la contraseña no cumple con los requisitos de longitud
+ } else if (!validacionContraseña.contieneCaracterEspecial) {
+     showErrorMessage('La contraseña debe contener al menos un carácter especial');
+     return; // Salir de la función si la contraseña no cumple con los requisitos de caracteres especiales
+ }
+
 
     createUserWithEmailAndPassword(auth, email, password).then(cred =>{
         showSuccessMessage("Usuario creado");
         sendEmailVerification(auth.currentUser).then(()=>{
             showSuccessMessage('Se ha enviado un correo de verificación');
+            window.location.href = "Home.html";
         });
     }).catch(error => {
         console.error('Error code: ', error.code);
@@ -53,15 +69,6 @@ registro.addEventListener('click', (e)=>{
             default:
                 showErrorMessage('Hubo un error');
                 break;
-        }
-
-        if(!validarContraseña(password)){
-            if (password.length < 6) {
-                showErrorMessage('La contraseña debe tener al menos 6 caracteres');
-            } else {
-                showErrorMessage('La contraseña no cumple con los requisitos');
-            }
-            return;
         }
     })
 })
