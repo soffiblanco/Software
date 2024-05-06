@@ -6,7 +6,8 @@
   "author": "Sofía Blanco, Katherine Diéguez, Daniela Natareno, Sofía Sandoval",
   "license": "MIT",
   "scripts": {
-    "build": "webpack"
+    "custom-build-script": "webpack"
   }
+
 }
 
