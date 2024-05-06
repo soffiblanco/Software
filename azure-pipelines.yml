@@ -1,8 +1,3 @@
-# ASP.NET Core
-# Build and test ASP.NET Core projects targeting .NET Core.
-# Add steps that run tests, create a NuGet package, deploy, and more:
-# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
-
 trigger:
 - none
 
@@ -13,25 +8,25 @@ variables:
   buildConfiguration: 'Release'
 
 steps:
-- task: DotNetCoreCLI@2
+- task: Npm@1
   inputs:
-    command: 'restore'
-    projects: '**/*.csproj'
-    feedsToUse: 'select'
+    command: 'install'
+    workingDir: '$(Build.SourcesDirectory)'
  
+- script: |
+  displayName: 'No se requieren instalaciones'
 
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'build'
-    projects: '**/*.csproj'
-    arguments: '--configuration $(buildConfiguration)'
+- script: |
+    mkdir -p $(Build.ArtifactStagingDirectory)/css
+    mkdir -p $(Build.ArtifactStagingDirectory)/js
+    mkdir -p $(Build.ArtifactStagingDirectory)/html
+    cp KDS_Games2/KDS_Games/*.js $(Build.ArtifactStagingDirectory)/js
+    cp KDS_Games2/KDS_Games/*.css $(Build.ArtifactStagingDirectory)/css
+    cp KDS_Games2/KDS_Games/*.html $(Build.ArtifactStagingDirectory)/html
+  displayName: 'Copiar archivos al directorio de artefactos'
 
-- task: DotNetCoreCLI@2
-  inputs:
-    command: 'publish'
-    publishWebProjects: true
-    arguments: '--configuration $(buildConfiguration) --output $(build.ArtifactStagingDirectory)'
+
 
 - task: PublishBuildArtifacts@1
   inputs:
