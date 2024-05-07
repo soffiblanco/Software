@@ -44,7 +44,7 @@ loginBtn.addEventListener('click', (e)=>{
             }
 
     signInWithEmailAndPassword(auth, email, password).then(cred =>{
-        showSuccessMessage ("Usuario logueado");
+        showSuccessMessage ("Usuario logueado Prueba");
            
         if(auth.currentUser.emailVerified){
             window.open('Home.html');
