@@ -30,6 +30,9 @@ if (auth.currentUser) {
 
 const loginBtn = document.getElementById('login');
 const cerrarBtn = document.getElementById('cerrar');
+const loginLink = document.getElementById('loginBtn'); // Obtén el enlace de login por su id
+const loggedInText = document.getElementById('loggedInText'); // Obtén el elemento de texto de sesión iniciada por su id
+
 
 
 loginBtn.addEventListener('click', (e)=>{
@@ -46,6 +49,8 @@ loginBtn.addEventListener('click', (e)=>{
 
     signInWithEmailAndPassword(auth, email, password).then(cred =>{
         showSuccessMessage ("Usuario logueado");
+            // Llama a la función para mostrar el texto de sesión iniciada y ocultar el enlace de login
+    mostrarTextoSesionIniciada();
         if(auth.currentUser.emailVerified){
             window.open('Home.html');
         } else{
@@ -144,4 +149,10 @@ function showErrorMessage(message) {
     setTimeout(() => {
         errorMessage.remove();
     }, 3000);
+}
+
+// Función para mostrar el texto de sesión iniciada y ocultar el enlace de login
+function mostrarTextoSesionIniciada() {
+    loginLink.style.display = "none"; // Oculta el enlace de login
+    loggedInText.style.display = "inline"; // Muestra el texto de sesión iniciada
 }
