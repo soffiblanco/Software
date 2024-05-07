@@ -22,14 +22,19 @@ steps:
     inputs:
       SourceFolder: '$(Build.SourcesDirectory)'  
       Contents: '**'  
-      TargetFolder: '$(Build.ArtifactStagingDirectory)'  
+      TargetFolder: '$(Build.ArtifactStagingDirectory)'
 
+  # Agrega una tarea para comprimir los archivos en un archivo zip
+  - task: ArchiveFiles@2
+    inputs:
+      rootFolderOrFile: '$(Build.ArtifactStagingDirectory)'
+      includeRootFolder: false
+      archiveType: 'zip'
+      archiveFile: '$(Build.ArtifactStagingDirectory)/web-artifacts.zip'
+      replaceExistingArchive: true
+
+  # Publica el archivo zip como un artefacto del pipeline
   - task: PublishBuildArtifacts@1
     inputs:
-      PathtoPublish: '$(Build.ArtifactStagingDirectory)'  
-      ArtifactName: 'web-artifacts'  
-
-  # Agrega más pasos según tus necesidades, como desplegar la aplicación, etc.
-
-
-
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)'
+      ArtifactName: 'web-artifacts'
